@@ -1,0 +1,16 @@
+version: '3'
+services:
+  h8300:
+    container_name: h8300
+    build: .
+    volumes:
+      - ./:/root
+    restart: always
+    environment:
+      - PGID=1001
+      - PUID=1001
+    logging:
+        driver: "json-file"
+        options:
+            max-file: "5"
+            max-size: "200k"
